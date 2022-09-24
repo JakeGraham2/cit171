@@ -51,10 +51,10 @@ function userlogin(){
     setusername();
     $.ajax({
         type: 'POST',
-        url: '/login',
+        url: 'https://dev.stedi.me/login',
         data: JSON.stringify({userName, password}),
         success: function(data) {
-            window.location.href = "/timer.html#"+data;//add the token to the url
+            window.location.href = "https://dev.stedi.me/timer.html#"+data;//add the token to the url
         },
         contentType: "application/text",
         dataType: 'text'
@@ -92,7 +92,7 @@ function createbutton(){
 function createuser(){
     $.ajax({
         type: 'POST',
-        url: '/user',
+        url: 'https://dev.stedi.me/user',
         data: JSON.stringify({userName, 'email': userName, password, 'verifyPassword': vpwd, 'accountType':'Personal'}),//we are using the email as the user name
         success: function(data) { alert(data);
 //        readonlyforms("newUser");
